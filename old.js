@@ -76,10 +76,10 @@ function calculateTax(){
            
            
            
-          else if (status == 1) {
-                //INSERT YOUR CODE BELOW
-                // Compute tax for single filers
-                if (income <= 19050){
+          else if(status == 1) {
+              
+              // Compute tax for married jointly or qualifying widow(er) filers
+               if (income <= 19050){
                  tax = income * 0.12;
                  taxRate = 12;
                }//end of nested if
@@ -113,14 +113,16 @@ function calculateTax(){
                         (165000 - 77400) * 0.22 + (315000 - 165000) * 0.24 +
                         (400000 - 315000) * 0.32 + (600000 - 400000 ) * 0.35 + (income - 600000) * .37;
                   taxRate = 37;
-               }
+               }//end of nested if
+               
+          }//end of married jointly filer calculation
+                
   
   
   
   
   
-  
-          }//end of married file jointly calculation
+          }
           
           
           
@@ -177,6 +179,8 @@ function calculateTax(){
                         (200000 - 157500) * 0.32 + (300000 - 200000 ) * 0.35 + (income - 300000) * .37;
                   taxRate = 37;
                }//end of nested if
+               
+          }
 
              
              
@@ -202,7 +206,7 @@ function calculateTax(){
           
           else if(status == 3) {
                 //INSERT YOUR CODE BELOW
-                 // Compute tax for head of household filers
+                // Compute tax for head of household filers
                if (income <= 13600){
                  tax = income * 0.10;
                  taxRate = 10;
@@ -238,6 +242,8 @@ function calculateTax(){
                         (200000 - 157500) * 0.32 + (500000 - 200000 ) * 0.35 + (income - 500000) * .37;
                   taxRate = 37;
                }//end of nested if
+               
+          }//end of head of household filer calculation
  
  
 
@@ -309,10 +315,9 @@ function clearButton () {
               document.getElementById("filingStatus").selectedIndex = 0;
               
              //INSERT YOUR CODE BELOW
-               document.getElementById("taxEstimate").innerHTML  = "";
-                document.getElementById("taxBracket").innerHTML  = "";
-              
-            
+             
+             
+
 
 
 
